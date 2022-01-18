@@ -4,7 +4,6 @@ import Searchbar from "../components/Searchbar/Searchbar";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ pokemons }) {
-  console.log(pokemons);
   return (
     <Layout>
       <div className={styles.counts}>found {pokemons.length} pokemons</div>

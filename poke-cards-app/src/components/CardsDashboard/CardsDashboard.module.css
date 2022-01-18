@@ -1,9 +1,9 @@
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 1rem;
+  grid-gap: 6rem;
   border: 1px solid red;
-  padding: 1rem;
+  padding: 1rem 3rem;
 }
 
 .card {
@@ -15,8 +15,17 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: 1rem;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.photo {
+  width: 50%;
+  border: 1px solid red;
+  margin: 0 auto;
 }
 
 .card h3 {
   text-transform: uppercase;
+  border: 1px solid red;
 }

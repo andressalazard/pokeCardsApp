@@ -1,0 +1,70 @@
+.wrapper {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  align-items: center;
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 1rem;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+
+  transition: transform 0.3s ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.wrapper:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.wrapper h3 {
+  text-transform: uppercase;
+  border: 1px solid red;
+}
+
+.pic {
+  width: 50%;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+}
+
+.stat {
+  position: relative;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.stat .tooltip {
+  visibility: hidden;
+  background-color: var(--light-black-tone);
+  color: #fff;
+  text-align: center;
+  border-radius: 0.75rem;
+
+  padding: 0.5rem;
+  position: absolute;
+  left: -25%;
+  bottom: -170%;
+  z-index: 1;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: var(--font-montserrat);
+  text-transform: uppercase;
+}
+
+.stat:hover .tooltip {
+  visibility: visible;
+}

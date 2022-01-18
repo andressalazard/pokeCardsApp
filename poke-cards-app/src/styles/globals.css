@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins:wght@300;500;700&family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
   --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 
   --black-tone: rgb(19, 1, 1);
   --light-black-tone: rgba(19, 1, 1, 0.75);
