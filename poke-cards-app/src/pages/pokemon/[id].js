@@ -17,7 +17,6 @@ const Pokemon = ({ pokemon }) => {
   useEffect(() => {
     fillDescription();
     displayDescription();
-    displaySideInfo();
   }, [pokemon]);
 
   const fillDescription = () => {
@@ -50,7 +49,7 @@ const Pokemon = ({ pokemon }) => {
 
         <div className={styles.category}>
           <h1 className={styles.sectionTitle}>Category</h1>
-          <div className={styles.types}>
+          <div className={styles.blocks}>
             {types.map((item, index) => {
               var name = item.type.name;
               var aux = pokemonTypes.filter((pokemon) => name === pokemon.name);
@@ -85,6 +84,45 @@ const Pokemon = ({ pokemon }) => {
             })}
           </div>
         </div>
+
+        <div className={styles.abilities}>
+          <h1 className={styles.sectionTitle}>Abilities</h1>
+          {showAbilities()}
+        </div>
+      </div>
+    );
+  };
+
+  const showAbilities = () => {
+    return (
+      <div className={styles.blocks}>
+        {abilities.map((element, index) => {
+          return (
+            <div className={styles.ability} key={index}>
+              <div className={styles.desc}>
+                <h1>{element.ability.name}</h1>
+              </div>
+              {generateSlots(element.slot)}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const generateSlots = (count) => {
+    var content = [];
+    for (let i = 0; i < count; i++) {
+      var icon = statsType.filter((item) => {
+        return item.name === "pokeball";
+      })[0].icon;
+      content.push(<img className={styles.slot} src={icon} key={i} />);
+    }
+
+    return (
+      <div>
+        <div className={styles.slots}>{content}</div>
+        <p>(slots required)</p>
       </div>
     );
   };
@@ -112,7 +150,10 @@ const Pokemon = ({ pokemon }) => {
 
           return (
             <div className={styles.stat} key={index}>
-              <img className={styles.stat_icon} src={statIcon} alt="stat pic" />
+              <div className={styles.legend}>
+                <img className={styles.stat_icon} src={statIcon} alt="stat pic" />
+                <span className={styles.msg}>{data.stat.name}</span>
+              </div>
               <ProgressBar completed={statValue} />
             </div>
           );
@@ -130,26 +171,37 @@ const Pokemon = ({ pokemon }) => {
   };
 
   const displayStates = () => {
+    let aux = showSprites();
     return (
       <div className={styles.evolution}>
-        <div className={styles.header}>Evolution</div>
+        <div className={styles.header}>appereance</div>
         <div className={styles.pics_wrapper}>
-          {/* this goes on a foreach */}
-          <div className={styles.state}>
-            <img className={styles.evolution_pic} src={sprites.back_default} alt="evolution" />
-            <span>state (lvl 0)</span>
-          </div>
-          <div className={styles.state}>
-            <img className={styles.evolution_pic} src={sprites.back_shiny} alt="evolution" />
-            <span>state (lvl 0)</span>
-          </div>
-          <div className={styles.state}>
-            <img className={styles.evolution_pic} src={sprites.front_shiny} alt="evolution" />
-            <span>state (lvl 0)</span>
-          </div>
+          {showSprites().map((state, index) => {
+            var name = state[0],
+              sprite = state[state.length - 1];
+
+            name = name.replace(/_/g, " ");
+
+            return (
+              <div className={styles.state} key={index}>
+                <img className={styles.evolution_pic} src={sprite} alt="evolution" />
+                <span>{name}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
+  };
+
+  const showSprites = () => {
+    var aux = [];
+    for (var i in sprites) {
+      if (typeof sprites[i] !== null && typeof sprites[i] !== "object" && !i.includes("front_default")) {
+        aux.push([i, sprites[i]]);
+      }
+    }
+    return aux;
   };
 
   return (

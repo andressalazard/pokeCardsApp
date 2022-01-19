@@ -27,4 +27,5 @@ export const statsType = [
   { name: "special-attack", icon: "/stats/s_attack.png" },
   { name: "special-defense", icon: "/stats/s_defense.png" },
   { name: "speed", icon: "/stats/speed.png" },
+  { name: "pokeball", icon: "/stats/pokeball.png" },
 ];

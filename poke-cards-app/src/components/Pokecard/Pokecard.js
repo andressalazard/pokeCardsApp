@@ -56,19 +56,19 @@ const Pokecard = ({ pokemonData }) => {
         <img className={styles.pic} src={image} alt="poke-pic" />
         <div className={styles.statistics}>
           <div className={styles.stat}>
-            <span className={styles.tooltip}>Health Points</span>
+            <Tooltip value="Health Points" />
             <div className={styles.value}>
               <span className="material-icons">favorite</span> {stats.hp}
             </div>
           </div>
           <div className={styles.stat}>
-            <span className={styles.tooltip}>Attack Points</span>
+            <Tooltip value="Attack Points" />
             <div className={styles.value}>
               <span className="material-icons">flash_on</span> {stats.attack}
             </div>
           </div>
           <div className={styles.stat}>
-            <span className={styles.tooltip}>Defense Points</span>
+            <Tooltip value="Defense Points" />
             <div className={styles.value}>
               <span className="material-icons">health_and_safety</span> {stats.defense}
             </div>
@@ -77,6 +77,10 @@ const Pokecard = ({ pokemonData }) => {
       </div>
     </Link>
   );
+};
+
+const Tooltip = ({ value }) => {
+  return <span className={styles.tooltip}>{value}</span>;
 };
 
 export default Pokecard;
