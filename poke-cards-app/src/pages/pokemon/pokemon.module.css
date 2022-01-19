@@ -1,0 +1,102 @@
+.container {
+  height: 100%;
+  padding: 1rem 18rem;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1rem;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.side_info {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 1.5rem;
+}
+
+.battle_stats {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.pic {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.description {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+
+.type_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+.type_data {
+  background-color: #c4c4c4;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.details {
+  padding: 0 1rem;
+}
+
+.detail {
+  background-color: #c4c4c4;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100%;
+  background-color: #a46767;
+  padding: 0.5rem 1rem;
+  border-radius: 0.125rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.evolution {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.pics_wrapper {
+  padding: 1rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5rem;
+}
+
+.state {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.state span {
+  background-color: rgba(0, 0, 0, 0.4);
+}

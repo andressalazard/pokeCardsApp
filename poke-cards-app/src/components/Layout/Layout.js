@@ -9,7 +9,7 @@ const Layout = ({ children, title = "PokeCardsApp" }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>Here goes the header</header>
+      <header className={styles.header}>Pokemon Cards App</header>
 
       <main className={styles.main}>{children}</main>
 

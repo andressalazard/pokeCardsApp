@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Pokecard.module.css";
 
@@ -14,7 +15,6 @@ const Pokecard = ({ pokemonData }) => {
     setName(pokemonData.name);
     setImage(pokemonData.sprites.front_default);
     initStats();
-    generateStat();
   }
 
   const handleChange = (prop, value) => {
@@ -49,46 +49,33 @@ const Pokecard = ({ pokemonData }) => {
     }
   }
 
-  const aux = "favorite";
-
-  const generateStat = () => {
-    var aux = [];
-    for (var i in stats) {
-      aux.push([i, stats[i]]);
-    }
-    console.log(aux);
-
-    for (let i = 0; i < aux.length; i++) {
-      var key = aux[i],
-        value = [i + 1];
-    }
-  };
-
   return (
-    <div className={styles.wrapper}>
-      <h3>{name}</h3>
-      <img className={styles.pic} src={image} alt="poke-pic" />
-      <div className={styles.statistics}>
-        <div className={styles.stat}>
-          <span className={styles.tooltip}>Health Points</span>
-          <div className={styles.value}>
-            <span className="material-icons">{aux}</span> {stats.hp}
+    <Link href={`/pokemon/${name}`}>
+      <div className={styles.wrapper}>
+        <h3>{name}</h3>
+        <img className={styles.pic} src={image} alt="poke-pic" />
+        <div className={styles.statistics}>
+          <div className={styles.stat}>
+            <span className={styles.tooltip}>Health Points</span>
+            <div className={styles.value}>
+              <span className="material-icons">favorite</span> {stats.hp}
+            </div>
           </div>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.tooltip}>Attack Points</span>
-          <div className={styles.value}>
-            <span className="material-icons">flash_on</span> {stats.attack}
+          <div className={styles.stat}>
+            <span className={styles.tooltip}>Attack Points</span>
+            <div className={styles.value}>
+              <span className="material-icons">flash_on</span> {stats.attack}
+            </div>
           </div>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.tooltip}>Defense Points</span>
-          <div className={styles.value}>
-            <span className="material-icons">health_and_safety</span> {stats.defense}
+          <div className={styles.stat}>
+            <span className={styles.tooltip}>Defense Points</span>
+            <div className={styles.value}>
+              <span className="material-icons">health_and_safety</span> {stats.defense}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
