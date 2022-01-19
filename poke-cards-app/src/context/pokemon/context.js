@@ -1,0 +1,30 @@
+export const pokemonTypes = [
+  { name: "normal" },
+  { name: "fighting", icon: "/pokemon_types/fight.png" },
+  { name: "flying", icon: "/pokemon_types/fly.png" },
+  { name: "poison", icon: "/pokemon_types/poison.png" },
+  { name: "ground", icon: "/pokemon_types/ground.png" },
+  { name: "rock" },
+  { name: "bug", icon: "/pokemon_types/bug.png" },
+  { name: "ghost" },
+  { name: "steel" },
+  { name: "fire", icon: "/pokemon_types/fire.png" },
+  { name: "water", icon: "/pokemon_types/water.png" },
+  { name: "grass", icon: "/pokemon_types/plant.png" },
+  { name: "electric", icon: "/pokemon_types/bolt.png" },
+  { name: "psychic", icon: "/pokemon_types/psychic.png" },
+  { name: "ice", icon: "/pokemon_types/ice.png" },
+  { name: "dragon" },
+  { name: "fairy" },
+  { name: "shadow" },
+  { name: "unknown" },
+];
+
+export const statsType = [
+  { name: "hp", icon: "/stats/hp.png" },
+  { name: "attack", icon: "/stats/attack.png" },
+  { name: "defense", icon: "/stats/defense.png" },
+  { name: "special-attack", icon: "/stats/s_attack.png" },
+  { name: "special-defense", icon: "/stats/s_defense.png" },
+  { name: "speed", icon: "/stats/speed.png" },
+];
