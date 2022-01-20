@@ -16,8 +16,9 @@ export default function Home({ pokemons }) {
 
   return (
     <Layout>
+      <div className={styles.counts}>Select a pokemon to see it's detail</div>
+      <Searchbar placeholder="Search a pokemon..." onChange={handleInputChange} />
       <div className={styles.counts}>found {filteredPokemons.length} pokemons</div>
-      <Searchbar placeholder="Search a pokemon" onChange={handleInputChange} />
       <CardsDashboard pokemons={filteredPokemons} />
     </Layout>
   );

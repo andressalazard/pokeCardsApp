@@ -4,9 +4,10 @@
 
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: var(--lighter-red-velvet-tone);
+  margin: 1rem 3rem;
+  background-color: rgb(234, 238, 245);
 
-  color: var(--wine-tone);
+  color: var(--blue-tone-dark);
 }
 
 .input {
@@ -19,5 +20,9 @@
 }
 
 .input::placeholder {
-  color: var(--lighter-black-tone);
+  color: var(--light-black-tone);
+}
+
+.container span {
+  font-weight: bold;
 }

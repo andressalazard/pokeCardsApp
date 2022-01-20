@@ -48,7 +48,9 @@ const Pokemon = ({ pokemon }) => {
         <div className={styles.header}>{name}</div>
 
         <div className={styles.category}>
-          <h1 className={styles.sectionTitle}>Category</h1>
+          <h1 className={styles.sectionTitle}>
+            <span>Category</span>
+          </h1>
           <div className={styles.blocks}>
             {types.map((item, index) => {
               var name = item.type.name;
@@ -68,7 +70,9 @@ const Pokemon = ({ pokemon }) => {
         </div>
 
         <div className={styles.characteristics}>
-          <h1 className={styles.sectionTitle}>Characteristics</h1>
+          <h1 className={styles.sectionTitle}>
+            <span>Characteristics</span>
+          </h1>
           <div className={styles.details}>
             {list.map((detail, index) => {
               var label = detail[0],
@@ -86,7 +90,9 @@ const Pokemon = ({ pokemon }) => {
         </div>
 
         <div className={styles.abilities}>
-          <h1 className={styles.sectionTitle}>Abilities</h1>
+          <h1 className={styles.sectionTitle}>
+            <span>Abilities</span>
+          </h1>
           {showAbilities()}
         </div>
       </div>
@@ -208,14 +214,9 @@ const Pokemon = ({ pokemon }) => {
     <Layout title={name}>
       <div className={styles.container}>
         <div className={styles.information}>
-          {/* Here goes the sideinfo */}
           {displaySideInfo()}
-
-          {/* Here goes description */}
           {displayDescription()}
         </div>
-
-        {/* Here goes evolution */}
         {displayStates()}
       </div>
     </Layout>
@@ -239,7 +240,7 @@ const ProgressBar = (props) => {
 
   const filler_style = {
     borderRadius: "0.5rem",
-    backgroundColor: "#c4c4c4",
+    backgroundColor: "rgb(81, 186, 216)",
     height: "1rem",
     width: `${completed}%`,
     transition: "width 1s ease-in-out",

@@ -1,5 +1,6 @@
 import styles from "./Layout.module.css";
 import Head from "next/head";
+import Link from "next/link";
 
 const Layout = ({ children, title = "PokeCardsApp" }) => {
   return (
@@ -9,11 +10,19 @@ const Layout = ({ children, title = "PokeCardsApp" }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>Pokemon Cards App</header>
+      <header className={styles.header}>
+        <Link href="/">
+          <h1>
+            <div className={styles.inner_border}>Pokemon Cards</div>
+          </h1>
+        </Link>
+      </header>
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>Created by Andrés Salazar</footer>
+      <footer className={styles.footer}>
+        Developed by <a href="https://github.com/andressalazard/">andressalazard</a>
+      </footer>
     </div>
   );
 };

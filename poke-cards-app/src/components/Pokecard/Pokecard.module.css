@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: #fff;
+  background-color: rgb(237, 245, 248);
   border-radius: 0.5rem;
   align-items: center;
   text-align: center;
@@ -9,8 +9,12 @@
   padding: 1rem;
 
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-
   transition: transform 0.3s ease-in-out, box-shadow 200ms ease-in-out;
+
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  color: var(--blue-tone-dark);
+  cursor: pointer;
 }
 
 .wrapper:hover {
@@ -20,19 +24,19 @@
 
 .wrapper h3 {
   text-transform: uppercase;
-  border: 1px solid red;
+  font-size: 1.125rem;
 }
 
 .pic {
   width: 50%;
-  border: 1px solid red;
   margin: 0 auto;
 }
 
 .statistics {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+  background-color: var(--blue-tone-dark-light);
+  border-radius: 0.75rem;
   padding: 0.5rem 1rem;
 }
 
@@ -43,12 +47,11 @@
 .value {
   display: flex;
   align-items: center;
-  border: 1px solid red;
 }
 
 .stat .tooltip {
   visibility: hidden;
-  background-color: var(--light-black-tone);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   text-align: center;
   border-radius: 0.75rem;
